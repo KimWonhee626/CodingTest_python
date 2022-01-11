@@ -22,12 +22,12 @@ def bfs(x, y):
             ny = y + dy[i]
             if nx<0 or ny<0 or nx>=N or ny>=M:
                 continue
-            if maze[nx][ny] == 0:
+            if maze[nx][ny] == 0: # 막혀있음
                 continue
             if maze[nx][ny] == 1:
-                maze[nx][ny] = maze[x][y] + 1
+                maze[nx][ny] = maze[x][y] + 1 # 이동한 위치에 거리정보 저장
                 queue.append((nx, ny))
-    return maze[N-1][M-1]
+    return maze[N-1][M-1] # 거리정보 반환
 
 result = bfs(0, 0)
 print(result)
